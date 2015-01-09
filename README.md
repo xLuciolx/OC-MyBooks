@@ -17,9 +17,9 @@ L'application à obtenir est [consultable en ligne](http://mybooks-demo.herokuap
 
 2. Créez la base de données MySQL à l'aide des scripts SQL fournis.
 
-3. En vous aidant de l'application en ligne, réalisez la fonctionnalité d'affichage de la liste des livres.
+3. En vous servant de l'application en ligne comme modèle, réalisez la fonctionnalité d'affichage de la liste des livres.
 
-4. En vous aidant de l'application en ligne, réalisez la fonctionnalité d'affichage des détails sur un livre.
+4. En vous servant de l'application en ligne comme modèle, réalisez la fonctionnalité d'affichage des détails sur un livre.
 
 Conseil : si vous obtenez des erreurs de chargement de classes ou de fichiers, pensez à vérifier que votre fichier `composer.json` contient une entrée `autoload` puis relancer la commande :
 
