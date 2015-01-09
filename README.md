@@ -5,7 +5,7 @@ Code source initial de l'activité PHP MyBooks.
 # Objectif
 
 Créer une application Web permettant d'afficher la liste des livres ainsi que les détails sur un livre.
-L'application à obtenir est [consultable en ligne](http://mybooks-demo.herokuapp.com/).
+L'application à obtenir est [consultable en ligne](https://oc-mybooks.herokuapp.com/).
 
 # Etapes de travail
 
@@ -17,9 +17,9 @@ L'application à obtenir est [consultable en ligne](http://mybooks-demo.herokuap
 
 2. Créez la base de données MySQL à l'aide des scripts SQL fournis.
 
-3. En vous servant de [l'application en ligne](http://mybooks-demo.herokuapp.com/) comme modèle, réalisez la fonctionnalité d'affichage de la liste des livres.
+3. En vous servant de [l'application en ligne](https://oc-mybooks.herokuapp.com/) comme modèle, réalisez la fonctionnalité d'affichage de la liste des livres.
 
-4. En vous servant de [l'application en ligne](http://mybooks-demo.herokuapp.com/) comme modèle, réalisez la fonctionnalité d'affichage des détails sur un livre.
+4. En vous servant de [l'application en ligne](https://oc-mybooks.herokuapp.com/) comme modèle, réalisez la fonctionnalité d'affichage des détails sur un livre.
 
 Conseil : si vous obtenez des erreurs de chargement de fichiers ou de classes, pensez à vérifier :
 
