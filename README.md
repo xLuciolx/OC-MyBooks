@@ -21,7 +21,12 @@ L'application à obtenir est [consultable en ligne](http://mybooks-demo.herokuap
 
 4. En vous servant de l'application en ligne comme modèle, réalisez la fonctionnalité d'affichage des détails sur un livre.
 
-Conseil : si vous obtenez des erreurs de chargement de classes ou de fichiers, pensez à vérifier que votre fichier `composer.json` contient une entrée `autoload` puis relancer la commande :
+Conseil : si vous obtenez des erreurs de chargement de fichiers ou de classes, pensez à vérifier :
+
+* Les espaces de noms dans lesquels sont définies vos classes dans les répertoires `Domain` et `DAO`.
+* La présence d'une entrée `autoload` appropriée dans votre fichier `composer.json`.
+
+Relancez ensuite la commande :
 
     composer update
 
