@@ -2,12 +2,12 @@
 
 Code source initial de l'activité PHP MyBooks sur OpenClassrooms.
 
-# Objectif
+## Objectif
 
 Créer une application Web permettant d'afficher la liste des livres ainsi que les détails sur un livre.
 L'application à obtenir est [consultable en ligne](https://oc-mybooks.herokuapp.com/).
 
-# Etapes de travail
+## Etapes de travail
 
 1. Récupérez les fichiers source de ce dépôt. 
 
