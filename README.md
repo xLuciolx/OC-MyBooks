@@ -1,6 +1,6 @@
-# MyBooks
+# OC-MyBooks
 
-Code source initial de l'activité PHP MyBooks.
+Code source initial de l'activité PHP MyBooks sur OpenClassrooms.
 
 # Objectif
 
