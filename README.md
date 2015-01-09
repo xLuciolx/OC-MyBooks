@@ -23,7 +23,7 @@ L'application à obtenir est [consultable en ligne](http://mybooks-demo.herokuap
 
 Conseil : si vous obtenez des erreurs de chargement de fichiers ou de classes, pensez à vérifier :
 
-* Les espaces de noms dans lesquels sont définies vos classes dans les répertoires `Domain` et `DAO`.
+* Les espaces de noms de vos classes dans les répertoires `Domain` et `DAO`.
 * La présence d'une entrée `autoload` appropriée dans votre fichier `composer.json`.
 
 Relancez ensuite la commande :
