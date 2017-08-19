@@ -3,9 +3,7 @@
 //Home page
 $app->get('/', function() use ($app){
   $books = $app['dao.book']->findAll();
-
-  ob_start();
-  require '../views/view.php';
-  $view = ob_clean();
-  return $view;
+  return $app['twig']->render('index.html.twig', array(
+    'books' => $books
+  ));
 });
