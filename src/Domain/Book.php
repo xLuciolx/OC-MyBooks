@@ -29,10 +29,10 @@ class Book {
   private $isbn;
 
   /**
-   * Author id
-   * @var int
+   * Associated author
+   * @var Author
    */
-  private $idAuth;
+  private $author;
 
   /*getters*/
 
@@ -68,12 +68,8 @@ class Book {
     return $this->isbn;
   }
 
-  /**
-   * @return int
-   */
-  public function getIdAuth(): int
-  {
-    return $this->idAuth;
+  public function getAuthor(){
+    return $this->author;
   }
 
   /*setters*/
@@ -123,13 +119,13 @@ class Book {
   }
 
   /**
-   * @param int $idAuth
+   * @param Author $author
    *
    * @return static
    */
-  public function setIdAuth(int $idAuth)
+  public function setAuthor(Author $author)
   {
-    $this->idAuth = $idAuth;
+    $this->author = $author;
     return $this;
   }
 }

@@ -1,59 +1,73 @@
 <?php
 
 namespace MyBooks\DAO;
+use       MyBooks\Domain\Book;
 
-use Doctrine\DBAL\Connection;
-use MyBooks\Domain\Book;
-
-class BookDAO {
+class BookDAO extends DAO {
 
   /**
-   * Database connection
-   * @var Connection
+   * @var AuthorDAO
    */
-  private $db;
+  private $authorDAO;
 
-  /**
-   * Constructor
-   * @method __construct
-   * @param  Connection  $db Database connection object
-   */
-  public function __construct(Connection $db)
-  {
-    $this->db = $db;
+  public function setAuthorDAO(AuthorDAO $authorDAO){
+    $this->authorDAO = $authorDAO;
   }
 
   /**
-   * Return a list of all books sorted by date (most recent first)
+   * Return a list of all books, sorted by date
    * @method findAll
-   * @return array List of all books
+   * @return array  A list of all books
    */
-  public function findAll(){
-    $sql    = "SELECT * FROM book ORDER BY book_id DESC";
-    $result = $this->db->fetchAll($sql);
+  public function findAll() {
+    $sql    = "SELECT * FROM book
+               ORDER BY book_id
+               DESC";
+    $result = $this->getDb()->fetchAll($sql);
 
-    //convert query result to an array of domain object
+    // Convert query result to an array of domain objects
     $books = array();
     foreach ($result as $row) {
-      $bookId         = $row['book_id'];
-      $books[$bookId] = $this->buildBook($row);
-    }
+        $bookId         = $row['book_id'];
+        $books[$bookId] = $this->buildDomainObject($row);
+      }
     return $books;
   }
 
   /**
-   * Creates a Book object based on a DB row
-   * @method buildBook
-   * @param  array $row The DB row containing Book data
-   * @return Book
+   * Return a book matchong the supplied id
+   * @method find
+   * @param  int $id
+   * @return Book | throw an exception if no book is found
    */
-  private function buildBook(array $row){
+  public function find($id){
+    $sql = 'SELECT * FROM book
+            WHERE book_id = ?';
+
+    $row = $this->getDb()->fetchAssoc($sql, [$id]);
+
+    if ($row) {
+      return $this->buildDomainObject($row);
+    }
+    else {
+      throw new \Exception('No book matching id ' . $id);
+
+    }
+  }
+
+  protected function buildDomainObject($row){
     $book = new Book();
     $book->setId($row['book_id']);
     $book->setTitle($row['book_title']);
-    $book->setSummary($row['book_summary']);
     $book->setIsbn($row['book_isbn']);
-    $book->setIdAuth($row['auth_id']);
+    $book->setSummary($row['book_summary']);
+
+    $authorId = $row['auth_id'];
+    $author   = $this->authorDAO->find($authorId);
+    $book->setAuthor($author);
+
     return $book;
   }
+
+
 }

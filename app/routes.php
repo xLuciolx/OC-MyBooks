@@ -6,4 +6,12 @@ $app->get('/', function() use ($app){
   return $app['twig']->render('index.html.twig', array(
     'books' => $books
   ));
-});
+})->bind('home');
+
+//Book detail
+$app->get('/book/{id}', function($id) use($app){
+  $book = $app['dao.book']->find($id);
+  return $app['twig']->render('book.html.twig', array(
+    'book' => $book
+  ));
+})->bind('book');
